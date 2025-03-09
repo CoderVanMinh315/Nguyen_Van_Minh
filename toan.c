@@ -16,7 +16,7 @@ int Nhan(int a, int b)
 	ketqua = a * b;
 	return ketqua;
 }
-int Chia(int a, int b)
+float Chia(int a, int b)
 {
 	int ketqua = 0;
 	{
@@ -25,6 +25,6 @@ int Chia(int a, int b)
 			printf("Lỗi: Không thể chia cho 0\n");
 			return 0; // Trả về 0 hoặc có thể xử lý khác tùy theo yêu cầu
 		}
-		return ketqua = a / b; // Thực hiện phép chia nguyên
+		return ketqua = (float)a / b; // Thực hiện phép chia nguyên
 	}
 }

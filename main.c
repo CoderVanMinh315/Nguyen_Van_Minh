@@ -1,8 +1,5 @@
 ﻿#include<stdio.h>
-int Cong(int a, int b);
-int Tru(int a, int b);
-int Nhan(int a, int b);
-int Chia(int a, int b);
+#include"toan.h"
 void main() {
 	printf("Hello world\n");
 	int x = Cong(56, 2);
@@ -11,7 +8,7 @@ void main() {
 	printf("Ket qua phep tru x: %d\n", y);
 	int z = Nhan(56, 2);
 	printf("Ket qua phep nhan x: %d\n", z);
-	int t = Chia(56, 2);
-	printf("Ket qua phep chia x: %d\n", t);
+	float t = Chia(56, 7);
+	printf("Ket qua phep chia x: %.2f\n", t);
 
 }
