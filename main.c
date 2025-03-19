@@ -1,14 +1,21 @@
 ﻿#include<stdio.h>
-void to_uppercase(char* str) {
-	while (*str) {
-		if (*str >= 'a' && *str <= 'z') {
-			*str = *str - ('a' - 'A');
-		}
-		str++;
-	}
+int count_words(const char* str) {
+    int count = 0;
+    int in_word = 0;
+    while (*str) {
+        if (*str == ' ' || *str == '\n' || *str == '\t') {
+            in_word = 0;
+        }
+        else if (in_word == 0) {
+            in_word = 1;
+            count++;
+        }
+        str++;
+    }
+    return count;
 }
 int main() {
 	char str[] = "Hello world! Van Minh day";
-	to_uppercase(str);
-	printf("Uppercase string: %s\n", str);
+    int worlds = count_words(str);
+	printf("Count worlds string: %d\n", worlds);
 }
