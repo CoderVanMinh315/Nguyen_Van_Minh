@@ -1,21 +1,26 @@
-﻿#include<stdio.h>
-int count_words(const char* str) {
-    int count = 0;
-    int in_word = 0;
+﻿#include <stdio.h>
+
+void capitalizeWords(char* str) {
+    int capitalize = 1; // Cờ để kiểm tra có cần in hoa không
+
     while (*str) {
-        if (*str == ' ' || *str == '\n' || *str == '\t') {
-            in_word = 0;
+        if (*str == ' ') {
+            capitalize = 1; // Đánh dấu từ mới khi gặp khoảng trắng
         }
-        else if (in_word == 0) {
-            in_word = 1;
-            count++;
+        else if (capitalize && *str >= 'a' && *str <= 'z') {
+            *str -= 32; // Chuyển chữ thường thành chữ hoa
+            capitalize = 0; // Tắt cờ sau khi in hoa
+        }
+        else {
+            capitalize = 0; // Không in hoa các ký tự còn lại
         }
         str++;
     }
-    return count;
 }
+
 int main() {
-	char str[] = "Hello world! Van Minh day";
-    int worlds = count_words(str);
-	printf("Count worlds string: %d\n", worlds);
+    char str[] = "xin chao Viet Nam ";
+    capitalizeWords(str);
+    printf("%s\n", str); 
+    return 0;
 }
