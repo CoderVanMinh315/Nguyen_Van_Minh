@@ -22,7 +22,7 @@ float Chia(int a, int b)
 	{
 		if (b == 0)  // Kiểm tra chia cho 0
 		{
-			printf("Lỗi: Không thể chia cho 0\n");
+			//printf("Lỗi: Không thể chia cho 0\n");
 			return 0; // Trả về 0 hoặc có thể xử lý khác tùy theo yêu cầu
 		}
 		return ketqua = (float)a / b; // Thực hiện phép chia nguyên
